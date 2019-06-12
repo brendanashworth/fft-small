@@ -6,16 +6,16 @@
 #include <math.h>
 
 void fft_slow(int* x, double complex* X, int N) {
-	int n, k;
+    int n, k;
 
-	// Iterate through k = N times.
-	for (k = 0; k < N; k++) {
-		for (n = 0; n < N; n++) {
-			X[k] += x[n] * cexp(-2 * M_PI * I * n * k / N);
-		}
-	}
+    // Iterate through k = N times.
+    for (k = 0; k < N; k++) {
+        for (n = 0; n < N; n++) {
+            X[k] += x[n] * cexp(-2 * M_PI * I * n * k / N);
+        }
+    }
 }
 
 void fft(int* x, double complex* X, int N) {
-	fft_slow(x, X, N);
+    fft_slow(x, X, N);
 }
