@@ -9,9 +9,9 @@ designed for embedded systems. It uses the 2-radix variation to grow with `O(n l
  * Cooley-Tukey algorithm with 2-radix DFT
  */
 
-void fft_slow(int* x, double* X, int N);
+void fft_slow(int* x, double complex* X, int N);
 
-void fft(int* x, double* X, int N);
+void fft(int* x, double complex* X, int N);
 
 ```
 

@@ -5,7 +5,7 @@
 #include <complex.h>
 #include <math.h>
 
-void fft_slow(int* x, double* X, int N) {
+void fft_slow(int* x, double complex* X, int N) {
 	int n, k;
 
 	// Iterate through k = N times.
@@ -16,6 +16,6 @@ void fft_slow(int* x, double* X, int N) {
 	}
 }
 
-void fft(int* x, double* X, int N) {
+void fft(int* x, double complex* X, int N) {
 	fft_slow(x, X, N);
 }

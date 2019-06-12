@@ -2,6 +2,8 @@
  * Cooley-Tukey algorithm with 2-radix DFT
  */
 
-void fft_slow(int* x, double* X, int N);
+#include <complex.h>
 
-void fft(int* x, double* X, int N);
+void fft_slow(int* x, double complex* X, int N);
+
+void fft(int* x, double complex* X, int N);
