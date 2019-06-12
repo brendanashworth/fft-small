@@ -6,14 +6,7 @@
 #include <math.h>
 
 #define eps 0.000001
-int imageq(double complex a, double complex b) {
-    double dr = creal(a) - creal(b);
-    double dc = cimag(a) - cimag(b);
-
-    return dr + dc < eps;
-}
-
-#define ASSERT_EQ(a, b) if (!imageq((a), (b))) goto fail;
+#define ASSERT_EQ(a, b) if (cabs((a) - (b)) > eps) goto fail;
 
 int main(int argc, char* argv[]) {
     /* do some simple tests */
