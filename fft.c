@@ -2,13 +2,12 @@
  * Cooley-Tukey algorithm with 2-radix DFT
  */
 
-#include <stdint.h>
 #include <complex.h>
 
 #define PI 3.14159265358979323846
 
-void fft_slow(int* x, double complex* X, uint16_t N) {
-    uint16_t n, k;
+void fft_slow(int* x, double complex* X, unsigned int N) {
+    unsigned int n, k;
 
     // Iterate through, allowing X_K = sum_N of the complex frequencies.
     for (k = 0; k < N; k++) {
@@ -18,8 +17,8 @@ void fft_slow(int* x, double complex* X, uint16_t N) {
     }
 }
 
-void fft_radix2(int* x, double complex* X, uint16_t N, uint16_t s) {
-    uint16_t k;
+void fft_radix2(int* x, double complex* X, unsigned int N, unsigned int s) {
+    unsigned int k;
     double complex t;
 
     // At the lowest level pass through (delta T=0 means no phase).
@@ -39,6 +38,6 @@ void fft_radix2(int* x, double complex* X, uint16_t N, uint16_t s) {
     }
 }
 
-void fft(int* x, double complex* X, uint16_t N) {
+void fft(int* x, double complex* X, unsigned int N) {
     fft_radix2(x, X, N, 1);
 }
